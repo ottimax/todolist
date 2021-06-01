@@ -1,10 +1,13 @@
 import React from 'react'
+import { IItemActivityProps } from '../type/type';
 
-export default function ItemActivity() {
+const ItemActivity: React.FunctionComponent<IItemActivityProps> = ({activity, delActivity, saveActivity}) => {
+  
+    // const listToRender = props.listActivity.activities.map(activity => {
+    //     return 
+    // })
 
-    return (
-        <div>
-            
-        </div>
-    )
-}
+    return <p>{activity.name}</p>;
+};
+
+export default ItemActivity;

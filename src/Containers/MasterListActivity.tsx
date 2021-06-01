@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import ListActivity from '../Components/ListActivity'
 import { IActivity, IListActivity } from '../type/type'
 
@@ -6,8 +7,24 @@ export default function MasterListActivity() {
 
     const [listActivity, setListActivity] = useState<IListActivity>({} as IListActivity)
 
-    function delAllCompleted(this: IListActivity){
-        let tmpActivities: Array<IActivity> = this.activities.filter((activity: IActivity) => {
+    async function getData(){
+        await axios.get("https://raw.githubusercontent.com/ottimax/todolist/dd5df9ac66b73267af1d9dbddbca688c52755dd0/src/data/data.json")
+        .then(res => {
+            setListActivity(res.data)
+
+            
+        })
+        .catch(err => {
+            console.log(err.message)
+        })
+    }
+
+    console.log("list", listActivity)
+
+    
+
+    function delAllCompleted(){
+        let tmpActivities: Array<IActivity> = listActivity.activities.filter((activity: IActivity) => {
             return activity.completed !== true
         })
 
@@ -40,9 +57,27 @@ export default function MasterListActivity() {
             ...prevState, activities: tmpActivities 
         }))
     }
+
+    function saveActivity(activity: IActivity){
+        let tmpActivities: Array<IActivity> = listActivity.activities
+        
+        const index = listActivity.activities.findIndex((tmpActivity: IActivity) => {
+            return tmpActivity.id === activity.id
+        })
+
+        tmpActivities[index] = activity
+
+        setListActivity((prevState: IListActivity) => ({
+            ...prevState, activities: tmpActivities 
+        }))
+    }
+
+    useEffect(() => {
+        getData()
+    }, []);
     
 
     return (
-        <ListActivity />
+        <ListActivity  listActivity={listActivity} addActivity={addActivity} delAllCompleted={delAllCompleted} delActivity={delActivity} saveActiviity={saveActivity}  />
     )
 }

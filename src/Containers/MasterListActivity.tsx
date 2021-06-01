@@ -2,21 +2,6 @@ import React, { useState } from 'react'
 import ListActivity from '../Components/ListActivity'
 import { IActivity, IListActivity } from '../type/type'
 
-const tmp: IListActivity = {
-    activities: [
-        {
-            id: 1,
-            name: "attivita 1",
-            completed: false
-        },
-        {
-            id: 2,
-            name: "attivita 2",
-            completed: true
-        }
-    ]
-}
-
 export default function MasterListActivity() {
 
     const [listActivity, setListActivity] = useState<IListActivity>({} as IListActivity)

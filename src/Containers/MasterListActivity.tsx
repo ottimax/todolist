@@ -8,11 +8,11 @@ export default function MasterListActivity() {
     const [listActivity, setListActivity] = useState<IListActivity>({} as IListActivity)
 
     async function getData(){
-        await axios.get("https://raw.githubusercontent.com/ottimax/todolist/dd5df9ac66b73267af1d9dbddbca688c52755dd0/src/data/data.json")
+        const apiUrl: any = process.env.REACT_APP_API_URL
+        console.log(apiUrl)
+        await axios.get(apiUrl)
         .then(res => {
             setListActivity(res.data)
-
-            
         })
         .catch(err => {
             console.log(err.message)

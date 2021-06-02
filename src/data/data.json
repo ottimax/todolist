@@ -2,12 +2,12 @@
     "activities": [
         {
             "id": 1,
-            "name": "attivita 1",
+            "name": "Attivita 1",
             "completed": false
         },
         {
             "id": 2,
-            "name": "attivita 2",
+            "name": "Attivita 2",
             "completed": true
         }
     ]

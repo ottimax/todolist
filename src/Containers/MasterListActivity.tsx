@@ -78,6 +78,6 @@ export default function MasterListActivity() {
     
 
     return (
-        <ListActivity  listActivity={listActivity} addActivity={addActivity} delAllCompleted={delAllCompleted} delActivity={delActivity} saveActiviity={saveActivity}  />
+        <ListActivity  listActivity={listActivity} addActivity={addActivity} delAllCompleted={delAllCompleted} delActivity={delActivity} saveActivity={saveActivity}   />
     )
 }

@@ -7,7 +7,7 @@ export type IListActivityProps = {
     delAllCompleted: Function,
     addActivity: Function,
     delActivity: Function,
-    saveActiviity: Function,
+    saveActivity: Function,
 }
 
 export type IActivity = {

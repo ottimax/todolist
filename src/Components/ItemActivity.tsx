@@ -15,11 +15,12 @@ import { IActivity, IItemActivityProps } from '../type/type';
         justifyContent: "center",
         margin: "0.5rem",
         padding: "1rem",
-        boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)"
+        boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
+        borderRadius: "10px"
       },
       button: {
           backgroundColor: "#2B2D42",
-          border: "1px solid gray",
+          border: "1px solid white",
           color: "white",
           padding: "0.5rem 0.7rem 0.5rem 0.7rem",
           borderRadius: "50px",
@@ -28,8 +29,8 @@ import { IActivity, IItemActivityProps } from '../type/type';
           fontSize: "14px",
           cursor: "pointer",
           '&:hover': {
-              backgroundColor: "gray",
-              color:"#2B2D42"
+              backgroundColor: "#e63946",
+              color:"white"
           }
       }
   }),

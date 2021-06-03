@@ -33,15 +33,15 @@ export default function MasterListActivity() {
         }))
     }
 
-    function addActivity(){
+    function addActivity(name: string){
         let tmpActivities: Array<IActivity> = listActivity.activities
-        const id = listActivity.activities[listActivity.activities.length - 1].id + 1
+        const id = listActivity.activities.length > 0 ? listActivity.activities[listActivity.activities.length - 1].id + 1 : 0
         
         tmpActivities.push({
             id: id,
             completed: false,
-            name: "attivita"
-        } as IActivity)
+            name: name
+        })
 
         setListActivity((prevState: IListActivity) => ({
             ...prevState, activities: tmpActivities 

@@ -11,9 +11,6 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
     minHeight: "100vh",
-  },
-  grid: {
-    backgroundColor: "black"
   }
 });
 
@@ -39,8 +36,6 @@ const ListActivity: React.FunctionComponent<IListActivityProps> = (props) => {
         direction="column"
         justify="center"
         alignItems="center"
-        lg={12}
-        className={classes.grid}
       >
         {listToRender}
       </Grid>

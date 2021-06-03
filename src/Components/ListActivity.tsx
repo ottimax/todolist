@@ -33,8 +33,8 @@ const ListActivity: React.FunctionComponent<IListActivityProps> = (props) => {
       <Grid
         container
         spacing={3}
-        direction="column"
-        justify="center"
+        direction="row"
+        justify="flex-start"
         alignItems="center"
       >
         {listToRender}
